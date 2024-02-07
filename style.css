@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+:root {
+    --color-50: #f8fafc;
+    --color-100: #f1f5f9;
+    --color-200: #e2e8f0;
+    --color-300: #cbd5e1;
+    --color-400: #94a3b8;
+    --color-500: #64748b;
+    --color-600: #475569;
+    --color-700: #334155;
+    --color-800: #1e293b;
+    --color-900: #0f172a;
+
+
+    --font-main: 'Inter', sans-serif;
+
+    font-family: var(--font-main);
+    font-size: 62.5%;
+    
+    background: var(--color-900);
+}
+
+main {
+    max-width: 640px;
+    margin: 0 auto 64px;
+    padding: 20px;
+}
+
+header {
+    margin-top: 6.4rem;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--color-700);
+}
+
+header h1 {
+    color: var(--color-100);
+    font-size: 3rem;
+
+    margin-top: 2rem;
+}
+
+#quiz {
+    counter-reset: quiz-item;
+}
+
+.quiz-item {
+    background: var(--color-700);
+
+    margin-top: 2.4rem;
+    border: 1px solid var(--color-600);
+    border-radius: 0.6rem;
+
+    overflow: hidden;
+}
+
+.quiz-item h3 {
+    color: var(--color-200);
+    font-size: large;
+
+    background: var(--color-800);
+
+    padding: 1.6rem 2rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.quiz-item h3::before {
+    counter-increment: quiz-item;
+    content: counter(quiz-item);
+
+    background: var(--color-600);
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 1.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+dl {
+    padding: 1.2rem 2.4rem 2rem 2.4rem;
+}
+
+dt {
+    padding-top: 0.8rem;
+    
+    display: flex;
+    gap: .8rem;
+}
+
+.quiz-item span {
+    color: var(--color-200);
+    font-size: 1.4rem;
+}
+
+input {
+    all: unset;
+    border: 1px solid var(--color-400);
+    width: 1.6rem;
+    height: 1.6rem;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;justify-content: center;
+    flex-shrink: 0;
+}
+
+input:checked {
+    border: 1px solid #a3e635;
+}
+
+input:checked::before {
+    content: "";
+    
+    height: 1.25rem;
+    width: 1.25rem;
+
+    background: #a3e635;
+
+    border-radius: 50%;
+}
+
+#acertos {
+    font-size: 1.6rem;
+    text-align: center;
+    background: #a3e635;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 1.2rem;
+}
